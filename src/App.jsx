@@ -30,7 +30,6 @@ const App = () => {
       <div>
         <h2>Posts</h2>
         <div>
-          //all posts render
           {posts[0]?.title}
         </div>
         <button onClick={() => createPost("Post1", "Desc1")}>Create Post</button>
