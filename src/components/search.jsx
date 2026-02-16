@@ -1,22 +1,22 @@
-import { Search as SearchIcon } from "lucide-react";
 import { useState } from "react";
+import { Search as SearchIcon } from "lucide-react";
 
-const Search = () => {
+const Search = ({setQuery}) => {
   const [search, setSearch] = useState("");
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
-    //search using your data
-    
+    setQuery(e.target.value)
   }
 
   return (
-    <div className="flex shadow-lg shadow-gray-300 px-4 py-2 w-1/3 rounded-2xl gap-2">
-      <input 
+    <div className="focus-within:border-2 focus-within:border-blue-400 flex shadow-lg shadow-gray-300 px-4 py-2 w-1/3 max-w-2xl rounded-2xl gap-2">
+      <input
         type="text" 
-        className="w-full outline-0" 
+        className="w-full outline-0 placeholder:text-sm placeholder:text-gray-400" 
         value={search} 
         onChange={handleSearch}
+        placeholder="Write your query..."
     />
       <SearchIcon />
     </div>
